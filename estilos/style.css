@@ -69,11 +69,11 @@ input#iemail {
     margin: 3px;
     border-radius: 5px;
     padding: 8px;
+    width: 75%;
 }
 
 input#b-login,
 input#b-reset {
-    display: block;
     width: 100%;
     padding: 8px;
     margin-bottom: 5px;
