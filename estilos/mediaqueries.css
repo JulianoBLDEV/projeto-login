@@ -3,6 +3,7 @@
 @media screen and (min-width: 768px) and (max-width: 992px) {
     main {
         width: 80vw;
+        height: 290px;
     }
 
     div#imagem {
@@ -15,5 +16,24 @@
     div#formulario {
         float: right;
         width: 70%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    main {
+        width: 920px;
+        height: 290px;
+    }
+
+    div#imagem {
+        float: right;
+        width: 50%;
+        height: 100%;
+
+    }
+
+    div#formulario {
+        float: left;
+        width: 50%;
     }
 }
