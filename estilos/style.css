@@ -2,9 +2,9 @@
 
 * {
     box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0px;
     padding: 0px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
@@ -16,17 +16,22 @@ main {
     background-color: snow;
     border: 1px solid rgba(0, 0, 0, 0.500);
     border-radius: 15px;
+    
+    width: 250px;
+    height: 510px;
+    box-shadow: 0px 0px 10px 10px #244b72;
+    overflow: hidden; /*tudo que estiver para fora da Div, irá ser cortado*/
+    
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 250px;
-    height: 530px;
-    box-shadow: 0px 0px 10px 10px #244b72;
-    overflow: hidden;
-    /*tudo que estiver para fora da Div, irá ser cortado*/
+    transition: width 0.3s, height 0.3s; /*efeito de transição na mudanã do W e do H da box*/
+    transition-timing-function: ease; /* suavisar o efeito de transição*/
+    /*todo efeito deve ser colocado por último nos seletores*/
 }
+
 
 div#imagem {
     display: block;
@@ -35,66 +40,72 @@ div#imagem {
     height: 200px;
 }
 
-H1 {
+div#formulario>H1 {
     font-size: 1.5em;
-    margin: 5px;
+    margin: 5px 0px;
     text-align: center;
-    margin-bottom: 10px;
 }
 
-p {
+div#formulario>p {
     font-size: 0.8em;
-    margin-bottom: 10px;
-    line-height: 1.2;
+    margin: 10px 0px;
     text-align: justify;
 }
 
 div#formulario {
-    display: block;
-    padding: 0px 10px 0px 10px;
-    height: 200px;
+    padding: 0px 10px;
 }
 
-div.caixas {
-    width: 100%;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: black;
-    margin-bottom: 5px;
+div.campo {
+    border-radius: 8px;
+    color: snow;
+    margin: 5px 0px;
+    border: 1px solid #5498C5;
+    background-color: #2f669e;
 }
 
-img.icons {
-    display: inline-block;
-    width: 35px;
+div.campo>label {
+    display: none;
 }
 
-input#isenha,
-input#iemail {
+div.campo>input {
     background-color: snow;
-    border-radius: 5px;
-    padding: 8px 8px 8px 8px;
-    width: 90%;
+    border-radius: 8px;
+    padding: 8px;
+    width: calc(100% - 42px); /*Cálculo para proporções de medidas*/
+    transform: translateY(-3px);
 }
 
-input#b-login,
-input#b-reset {
+div>span {
+    width: 35px;
+    padding: 5px;
+    font-size: 10em;
+}
+
+form>input[type=submit] {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 5px;
+    height: 40px;
     border: 1px solid #5498C5;
     border-radius: 5px;
     font-size: 1em;
 }
 
-input#b-login {
+form>input[type=submit]:hover,
+form>a:hover {
     background-color: #5498C5;
     color: snow;
+    cursor: pointer;
 }
 
-input#b-login:hover {
-    background-color: #335c77;
-}
-
-input#b-reset:hover {
-    background-color: #589ecc;
+form>a {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    height: 40px;
+    border: 1px solid #5498C5;
+    border-radius: 5px;
+    font-size: 1em;
+    text-decoration: none;
+    text-align: center;
+    color: black;
 }
